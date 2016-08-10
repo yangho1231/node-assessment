@@ -5,13 +5,13 @@ import Faker from 'faker';
 import users from './users.json';
 
 test('Get all users', async t=> {
-  t.plan(2)
+  t.plan(3)
   const res = await request(app)
     .get('/api/users')
     .expect(200)
 
   t.is(res.status, 200, 'Status is not 200');
-  t.is(res.body[0], users[0], "No user returned");
+  t.deepEqual(res.body[0], users[0], "No user returned");
   t.truthy(res.body, 'Something is wrong with the response body');
 })
 
