@@ -8,5 +8,7 @@
     "lodash": "^4.14.1",
     "supertest": "^2.0.0",
     "supertest-as-promised": "^3.2.0"
+  },
+  "dependencies": {
   }
 }
