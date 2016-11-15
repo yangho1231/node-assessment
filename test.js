@@ -65,6 +65,7 @@ test('Create new user', async t => {
     .send(newUser)
 
   t.is(req.status, 200, 'Make sure you are using bodyParser');
+  t.truthy(Array.isArray(req.body.favorites));
 })
 
 test('Create a new admin user', async t => {
@@ -74,6 +75,7 @@ test('Create a new admin user', async t => {
     .send(newUser)
 
   t.is(req.status, 200)
+  t.truthy(Array.isArray(req.body.favorites));
 })
 
 test('Change a users language', async t => {

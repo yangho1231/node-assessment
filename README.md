@@ -24,7 +24,7 @@ Create the following endpoints in `server.js` using express.
 
 1.  Get all users. Return all users from the users array.
    `GET: /api/users`
-   
+
 2.  Get all users by language. You will receive the `language` as a query ('english, french, spanish or klingon.').  Return an array of all users that have the same language specified in the query.
    `GET: /api/users?language=klingon`
 
@@ -37,13 +37,13 @@ Create the following endpoints in `server.js` using express.
 5. Create a new user.  You will receive the data on the body.  All users will need an id property.   Manage the value so that it increments each time.  Collections should be initialized with a defualt array.  Return a valid status code and the new user object you created (with the id on it).  
    `POST: /api/users`
 
-6. Create a new admin user. You will receive their privilege as a url parameter. ('admin, moderator, or user').  Return a valid status code.  Make sure to set the privilege correctly.
+6. Create a new admin user. You will receive their privilege as a url parameter. ('admin, moderator, or user').  Return a valid status code and the new user object you created.  Make sure to set the privilege correctly.
    `POST: /api/users/admin`
 
 7.  Change a user's language. The language will be sent in the body `{language: "New language"}`. Update the user in your array and then return a valid status code and the updated user object.
    `POST: /api/users/language` + userId
 
-8.  Add to a users favorite forums. Use params to get a user by id. You will receive the data on the body `{add: 'New Forum'}`. Return a valid status code.
+8.  Add to a users favorite forums. Use params to get a user by id. You will receive the data on the body `{add: 'New Forum'}`. Return a valid status code. #5 must be working in order for this test to pass.
    `POST: /api/users/forums/` + userId
 
 9. Remove from a users favorite forums. Use delete REST method. You will receive the user id in the url params. You will receive the forum to delete in the query. You will need to search your array and splice it out.
@@ -52,8 +52,8 @@ Create the following endpoints in `server.js` using express.
 10.  Ban (delete) a user. Use REST method delete and the query params to delete a user by their id number.
    `DELETE: /api/users/` + userID
 
-11. Change your get all users (#1) endpoint so that it uses queries. Allow queries for age, language, city, state, and gender.
+11. Change your get all users (#1) endpoint so that it uses queries. Allow queries for age, language, city, state, and gender. Note that queries are case sensitive, i.e. ?city="scranton" will not match "Scranton" on the user's city property.
 
 
-12. Update one user by id.  (You'll need to find your user then use a for in loop to update properties).
+12. Update one user by id.  (You'll need to find your user then use a for in loop to update properties). This test will not work if your GET endpoints are not all functioning.
    `PUT: /api/users/` + userId
