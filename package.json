@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "start": "node server.js"
   },
   "devDependencies": {
     "ava": "^0.15.2",
@@ -10,5 +11,21 @@
     "supertest-as-promised": "^3.2.0"
   },
   "dependencies": {
-  }
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1"
+  },
+  "name": "node-assessment",
+  "description": "* The file must be called server.js\r * There is a package.json included with dependencies in it, you should know what to do.\r * It must use express, and body parser (Set up the app and use the body parser)\r * You will want to require the included `users.json file`  `var users = require('./users.json');`\r * At the bottom of the file you must `module.exports` your express app.\r * Listen on port 3000.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangho1231/node-assessment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangho1231/node-assessment/issues"
+  },
+  "homepage": "https://github.com/yangho1231/node-assessment#readme"
 }
